@@ -1,0 +1,54 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+keystore/
+secrets/
+
+# Interview raw data: contacts, recordings, unanonymized notes never go to Git
+docs/02-interviews/private/
+*.m4a
+*.mp3
+*.wav
+
+# Node / TypeScript
+node_modules/
+.next/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+.pnpm-store/
+npm-debug.log*
+pnpm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Solidity / Foundry
+contracts/out/
+contracts/cache/
+broadcast/*/31337/
+broadcast/**/dry-run/
+
+# ML artifacts
+mlruns/
+*.ckpt
+*.safetensors
+data/raw/
+
+# IDE and OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
