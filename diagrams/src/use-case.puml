@@ -1,0 +1,34 @@
+@startuml use-case
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam usecase {
+  BackgroundColor White
+  BorderColor #555555
+}
+actor Creator
+actor Moderator
+actor Viewer
+
+rectangle Memechain {
+  usecase "Generate meme from news" as UC1 #line:6644DD
+  usecase "Publish meme" as UC2 #line:6644DD
+  usecase "Check meme against news" as UC3 #line:A55200
+  usecase "Pass KYC" as UC4 #line:0A7766
+  usecase "View earnings,\nrequest payout" as UC5 #line:0A7766
+  usecase "Browse story feed" as UC6 #line:A55200
+  usecase "Subscribe to creator" as UC7 #line:0A7766
+  usecase "Report meme" as UC8 #line:A55200
+  usecase "Review flagged memes" as UC9 #line:A55200
+}
+
+Creator --> UC1
+Creator --> UC2
+Creator --> UC4
+Creator --> UC5
+UC2 ..> UC3 : <<include>>
+UC6 <-- Viewer
+UC7 <-- Viewer
+UC8 <-- Viewer
+Moderator --> UC9
+@enduml
